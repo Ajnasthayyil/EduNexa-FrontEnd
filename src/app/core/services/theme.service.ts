@@ -29,9 +29,9 @@ export class ThemeService {
     localStorage.setItem('app-theme', theme);
     
     if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
       document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }
 

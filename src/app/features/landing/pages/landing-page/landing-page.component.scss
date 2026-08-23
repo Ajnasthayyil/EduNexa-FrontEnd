@@ -2,14 +2,14 @@
 
 .landing-page-container {
   font-family: 'Inter', sans-serif;
-  color: #e2e8f0;
+  color: var(--text-main);
   
   /* Apply parallax background to entire container */
-  background-image: linear-gradient(rgba(11, 13, 18, 0.4), rgba(11, 13, 18, 0.9)), url('../../../../../assets/images/simple_dark_bg.png');
+  background-image: linear-gradient(rgba(11, 13, 18, 0.4), var(--bg-dark)), url('../../../../../assets/images/simple_dark_bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-color: #0b0d12;
+  background-color: var(--bg-main);
   
   min-height: 100vh;
   overflow-x: hidden;
@@ -26,10 +26,10 @@
   align-items: center;
   padding: 0.75rem 2rem;
   margin: 1.5rem 6rem;
-  background: rgba(20, 24, 34, 0.5);
+  background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 50px;
   position: sticky;
   top: 1.5rem;
@@ -42,7 +42,7 @@
     gap: 0.5rem;
     font-weight: 700;
     font-size: 1.25rem;
-    color: #ffffff;
+    color: var(--text-main);
     
     .logo-icon {
       color: #2563eb;
@@ -56,15 +56,15 @@
     
     .nav-link {
       text-decoration: none;
-      color: #94a3b8;
+      color: var(--text-muted);
       font-weight: 500;
       font-size: 0.95rem;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       display: inline-block;
       
       &:hover, &.active {
-        color: #ffffff;
-        text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        color: var(--text-main);
+        text-shadow: 0 0 10px var(--border-color);
         transform: translateZ(20px) rotateX(10deg);
       }
     }
@@ -79,7 +79,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #94a3b8;
+      color: var(--text-muted);
       font-weight: 500;
       cursor: pointer;
       transition: color 0.3s;
@@ -134,7 +134,7 @@
     transform-style: preserve-3d;
     
     &.orb-1 { width: 120px; height: 120px; top: 20%; left: 10%; animation-duration: 9s; }
-    &.orb-2 { width: 200px; height: 200px; bottom: 10%; right: 15%; animation-duration: 12s; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(226, 232, 240, 0.5) 40%, rgba(15, 23, 42, 0.8) 100%); box-shadow: inset -15px -15px 30px rgba(0, 0, 0, 0.4), inset 15px 15px 30px rgba(255, 255, 255, 0.6), 0 20px 40px rgba(255, 255, 255, 0.1); }
+    &.orb-2 { width: 200px; height: 200px; bottom: 10%; right: 15%; animation-duration: 12s; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(226, 232, 240, 0.5) 40%, rgba(15, 23, 42, 0.8) 100%); box-shadow: inset -15px -15px 30px rgba(0, 0, 0, 0.4), inset 15px 15px 30px rgba(255, 255, 255, 0.6), 0 20px 40px var(--border-color); }
     &.orb-3 { width: 80px; height: 80px; top: 40%; right: 30%; animation-duration: 7s; }
   }
 
@@ -177,7 +177,7 @@
       border: 1px solid rgba(37, 99, 235, 0.3);
       padding: 0.5rem 1.2rem;
       border-radius: 30px;
-      color: #e2e8f0;
+      color: var(--text-main);
       font-size: 0.9rem;
       font-weight: 500;
       margin-bottom: 1rem;
@@ -198,7 +198,7 @@
     }
 
     .hero-subtitle {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1.15rem;
       line-height: 1.6;
       max-width: 600px;
@@ -218,8 +218,8 @@
       }
 
       .glass-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--border-color);
+        border: 1px solid var(--border-color);
         color: #fff;
         backdrop-filter: blur(10px);
         display: flex;
@@ -227,7 +227,7 @@
         transition: all 0.3s ease;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.1);
+          background: var(--border-color);
           border-color: rgba(255, 255, 255, 0.3);
         }
       }
@@ -275,7 +275,7 @@
         }
         
         span {
-          color: #94a3b8;
+          color: var(--text-muted);
           font-size: 0.85rem;
           
           strong { color: #fff; }
@@ -298,7 +298,7 @@
 /* Unified Platform Section */
 .unified-platform {
   padding: 6rem 4rem;
-  background-color: #0b0d12;
+  background-color: var(--bg-main);
   position: relative;
   overflow: hidden;
 
@@ -318,7 +318,7 @@
     }
 
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1.1rem;
       line-height: 1.6;
     }
@@ -340,8 +340,8 @@
       z-index: 2;
 
       .up-card {
-        background: rgba(20, 24, 34, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
         border-radius: 16px;
         padding: 1.5rem 2rem;
         width: 280px;
@@ -374,14 +374,14 @@
         }
 
         h4 {
-          color: #e2e8f0;
+          color: var(--text-main);
           font-weight: 600;
           margin-bottom: 0.5rem;
           font-size: 1.1rem;
         }
 
         p {
-          color: #94a3b8;
+          color: var(--text-muted);
           font-size: 0.9rem;
           line-height: 1.4;
         }
@@ -493,7 +493,7 @@
 
   .f-card {
     background: linear-gradient(145deg, rgba(25, 30, 45, 0.95), rgba(12, 15, 22, 0.98));
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     border-top: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     padding: 2rem;
@@ -537,7 +537,7 @@
       border-color: #3b82f6;
       border-top: 1px solid #93c5fd;
       box-shadow: 
-        0 8px 0 #0f172a,
+        0 8px 0 var(--bg-card-hover),
         0 20px 45px rgba(29, 78, 216, 0.5),
         inset 0 2px 10px rgba(255, 255, 255, 0.3);
 
@@ -577,10 +577,10 @@
       }
 
       .layer-front {
-        background: linear-gradient(135deg, #1e293b, #0f172a);
-        border: 1px solid rgba(255,255,255,0.2);
+        background: linear-gradient(135deg, #1e293b, var(--bg-card-hover));
+        border: 1px solid var(--border-color);
         transform: translateZ(15px);
-        box-shadow: -5px 10px 20px rgba(0,0,0,0.6), inset 0 2px 4px rgba(255,255,255,0.2);
+        box-shadow: -5px 10px 20px rgba(0,0,0,0.6), inset 0 2px 4px var(--border-color);
       }
     }
 
@@ -592,7 +592,7 @@
     }
 
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 0.85rem;
       line-height: 1.5;
     }
@@ -619,7 +619,7 @@
 /* Testimonials Section */
 .testimonials-section {
   padding: 6rem 0;
-  background-color: #0b0d12;
+  background-color: var(--bg-main);
   overflow: hidden;
 
   .t-header {
@@ -637,7 +637,7 @@
     }
 
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1.1rem;
     }
   }
@@ -685,7 +685,7 @@
 
   .testimonial-card {
     background: rgba(30, 35, 50, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 2rem;
@@ -694,18 +694,18 @@
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateX(0deg);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 1px var(--border-color);
     
     &:hover {
       transform: perspective(1000px) rotateX(5deg) scale(1.02) translateZ(10px);
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15), inset 0 1px 1px rgba(255,255,255,0.2);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15), inset 0 1px 1px var(--border-color);
       border-color: rgba(37, 99, 235, 0.3);
     }
 
     .t-quote {
       font-size: 1.05rem;
       line-height: 1.6;
-      color: #e2e8f0;
+      color: var(--text-main);
       margin-bottom: 2rem;
       font-style: italic;
     }
@@ -737,7 +737,7 @@
       }
 
       span {
-        color: #94a3b8;
+        color: var(--text-muted);
         font-size: 0.85rem;
       }
     }
@@ -752,12 +752,12 @@
 /* CTA Section */
 .cta-section {
   padding: 6rem 4rem 10rem 4rem;
-  background-color: #05070a;
+  background-color: var(--bg-main);
   display: flex;
   justify-content: center;
 
   .cta-banner {
-    background: linear-gradient(145deg, rgba(30, 35, 50, 0.6), rgba(11, 13, 18, 0.9));
+    background: linear-gradient(145deg, rgba(30, 35, 50, 0.6), var(--bg-dark));
     border: 1px solid rgba(37, 99, 235, 0.3);
     border-radius: 24px;
     padding: 4rem;
@@ -802,7 +802,7 @@
       }
 
       p {
-        color: #94a3b8;
+        color: var(--text-muted);
         font-size: 1.2rem;
         line-height: 1.6;
         margin-bottom: 3rem;
@@ -828,7 +828,7 @@
           transition: all 0.3s;
 
           &:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--border-color);
             border-color: rgba(255, 255, 255, 0.4);
           }
         }
@@ -922,9 +922,9 @@
 /* Footer Section */
 .landing-footer {
   position: relative;
-  background-color: #05070a;
+  background-color: var(--bg-main);
   padding: 6rem 4rem 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
   overflow: hidden;
 
@@ -950,7 +950,7 @@
     gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 4rem;
   }
 
@@ -969,7 +969,7 @@
     }
     
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1rem;
       line-height: 1.7;
     }
@@ -994,7 +994,7 @@
       }
       
       a {
-        color: #94a3b8;
+        color: var(--text-muted);
         text-decoration: none;
         font-size: 0.95rem;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1037,11 +1037,11 @@
     align-items: center;
     
     p {
-      color: #64748b;
+      color: var(--text-muted);
       font-size: 0.95rem;
       
       .airo-tech-link {
-        color: #e2e8f0;
+        color: var(--text-main);
         text-decoration: none;
         font-weight: 600;
         position: relative;
@@ -1076,7 +1076,7 @@
       gap: 2rem;
       
       a {
-        color: #64748b;
+        color: var(--text-muted);
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.3s;
@@ -1121,7 +1121,7 @@
       -webkit-text-fill-color: transparent;
     }
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1.2rem;
     }
   }
@@ -1138,7 +1138,7 @@
 
   .role-card {
     background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.15) 0%, rgba(10, 15, 25, 0.95) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.8);
     border-radius: 20px;
@@ -1158,7 +1158,7 @@
       content: '';
       position: absolute;
       top: 0; left: 10%; width: 80%; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
     }
 
     .r-icon {
@@ -1174,7 +1174,7 @@
       border-top: 1px solid rgba(147, 197, 253, 0.5);
       box-shadow: 
         0 15px 25px rgba(0,0,0,0.6), 
-        inset 0 2px 4px rgba(255,255,255,0.2),
+        inset 0 2px 4px var(--border-color),
         0 0 15px rgba(59, 130, 246, 0.2);
       transform: translateZ(30px);
       transition: all 0.5s ease;
@@ -1197,7 +1197,7 @@
     }
 
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1rem;
       line-height: 1.6;
       transform: translateZ(15px);
@@ -1259,7 +1259,7 @@
       -webkit-text-fill-color: transparent;
     }
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1.2rem;
     }
   }
@@ -1275,7 +1275,7 @@
   }
 
   .m-card {
-    background: linear-gradient(145deg, rgba(30, 35, 50, 0.6), rgba(11, 13, 18, 0.9));
+    background: linear-gradient(145deg, rgba(30, 35, 50, 0.6), var(--bg-dark));
     border: 1px solid rgba(37, 99, 235, 0.3);
     border-radius: 20px;
     padding: 2.5rem;
@@ -1308,7 +1308,7 @@
     }
 
     p {
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.6;
       transform: translateZ(10px);

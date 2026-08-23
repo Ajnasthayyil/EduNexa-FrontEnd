@@ -6,10 +6,10 @@
 .header {
   height: 64px;
   margin: 1rem 2rem;
-  background: rgba(20, 24, 34, 0.5);
+  background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 32px;
   display: flex;
   justify-content: space-between;
@@ -42,7 +42,7 @@
     margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: var(--text-main);
   }
 }
 
@@ -55,17 +55,17 @@
   .search-box {
     display: flex;
     align-items: center;
-    background: rgba(30, 35, 48, 0.5);
+    background: var(--bg-card);
     border-radius: 30px;
     padding: 8px 16px;
     gap: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
     transition: all 0.2s;
 
     &:focus-within {
-      border-color: #a855f7;
-      background: rgba(30, 35, 48, 0.8);
-      box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+      border-color: var(--primary);
+      background: var(--bg-card-hover);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
     }
 
     svg { color: #94a3b8; }
@@ -74,7 +74,7 @@
       border: none;
       background: none;
       outline: none;
-      color: #e2e8f0;
+      color: var(--text-main);
       width: 100%;
       font-size: 0.9rem;
 
@@ -101,11 +101,11 @@
     border-radius: 50%;
     transition: all 0.2s;
     position: relative;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
 
     &:hover {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
+      background: var(--bg-card-hover);
+      color: var(--text-main);
     }
 
     &.with-badge .badge {
@@ -123,7 +123,7 @@
   .profile-menu {
     position: relative;
     margin-left: 12px;
-    border-left: 1px solid rgba(255,255,255,0.1);
+    border-left: 1px solid var(--border-color);
     padding-left: 20px;
 
     .profile-trigger {
@@ -135,7 +135,7 @@
       border-radius: 30px;
       transition: background 0.2s;
 
-      &:hover { background: rgba(255,255,255,0.05); }
+      &:hover { background: var(--bg-card-hover); }
 
       .avatar {
         width: 36px;
@@ -155,7 +155,7 @@
         h4 {
           margin: 0 0 2px 0;
           font-size: 0.9rem;
-          color: #e2e8f0;
+          color: var(--text-main);
           font-weight: 600;
         }
         span {
@@ -170,22 +170,22 @@
       top: calc(100% + 15px);
       right: 0;
       width: 220px;
-      background: rgba(20, 24, 34, 0.95);
+      background: var(--bg-card);
       backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--border-color);
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      box-shadow: var(--shadow-lg);
       overflow: hidden;
       display: flex;
       flex-direction: column;
 
       .dropdown-header {
         padding: 16px;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        background-color: rgba(168, 85, 247, 0.05);
+        border-bottom: 1px solid var(--border-color);
+        background-color: var(--bg-card-hover);
 
-        h4 { margin: 0 0 4px 0; color: #e2e8f0; font-size: 0.95rem; }
-        span { font-size: 0.8rem; color: #94a3b8; }
+        h4 { margin: 0 0 4px 0; color: var(--text-main); font-size: 0.95rem; }
+        span { font-size: 0.8rem; color: var(--text-muted); }
       }
 
       .dropdown-item {
@@ -193,7 +193,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        color: #e2e8f0;
+        color: var(--text-main);
         text-decoration: none;
         font-size: 0.9rem;
         cursor: pointer;
@@ -202,15 +202,15 @@
         svg { color: #94a3b8; }
 
         &:hover {
-          background: rgba(255,255,255,0.05);
-          color: #a855f7;
-          svg { color: #a855f7; }
+          background: var(--bg-card-hover);
+          color: var(--primary);
+          svg { color: var(--primary); }
         }
       }
 
       .dropdown-divider {
         height: 1px;
-        background-color: rgba(255,255,255,0.05);
+        background-color: var(--border-color);
         margin: 4px 0;
       }
     }

@@ -56,6 +56,24 @@
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
 }
 
+/* Light Theme overrides */
+[data-theme="light"] {
+  --bg-main: #f1f5f9; /* Slate 100 */
+  --bg-dark: #f8fafc; /* Slate 50 */
+  --bg-card: #ffffff; /* White cards */
+  --bg-card-hover: #f1f5f9;
+  --text-main: #0f172a; /* Slate 900 */
+  --text-muted: #64748b; /* Slate 500 */
+  --border-color: #e2e8f0; /* Slate 200 */
+  
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

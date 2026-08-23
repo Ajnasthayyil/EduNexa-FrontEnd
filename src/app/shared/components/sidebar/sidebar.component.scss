@@ -90,7 +90,7 @@
         }
         span {
             font-size: 0.75rem;
-            color: #94a3b8;
+            color: var(--text-muted);
         }
     }
 }
@@ -108,7 +108,7 @@
         width: 40px;
         min-width: 40px;
         height: 40px;
-        background: #3b82f6;
+        background: var(--primary);
         color: white;
         border-radius: 50%;
         display: flex;
@@ -132,7 +132,7 @@
         }
         span {
             font-size: 0.75rem;
-            color: #94a3b8;
+            color: var(--text-muted);
         }
     }
 }
@@ -147,7 +147,7 @@ nav {
         display: flex;
         align-items: center;
         gap: 12px;
-        background-color: #2563eb;
+        background-color: var(--primary);
         color: white;
         padding: 12px 18px;
         border-radius: 8px;
@@ -162,14 +162,14 @@ nav {
         }
 
         &:hover {
-            background-color: #1d4ed8;
+            background-color: var(--primary-hover);
         }
     }
 
     .menu-label {
         font-size: 0.75rem;
         font-weight: 600;
-        color: #64748b;
+        color: var(--text-muted);
         letter-spacing: 0.5px;
         margin-bottom: 12px;
         padding-left: 8px;
@@ -183,7 +183,7 @@ nav {
         align-items: center;
         gap: 12px;
         padding: 10px 18px;
-        color: #94a3b8;
+        color: var(--text-muted);
         text-decoration: none;
         font-size: 0.9rem;
         font-weight: 500;
@@ -204,7 +204,7 @@ nav {
 
         .chevron {
             margin-left: auto;
-            color: #64748b;
+            color: var(--text-muted);
             opacity: 0;
             transition: opacity 0.2s ease;
         }
@@ -226,7 +226,7 @@ nav {
             align-items: center;
             gap: 12px;
             padding: 10px 18px;
-            color: #94a3b8;
+            color: var(--text-muted);
             text-decoration: none;
             border-radius: 8px;
             white-space: nowrap;
@@ -264,7 +264,7 @@ nav {
                     content: '•';
                     position: absolute;
                     left: 0;
-                    color: #64748b;
+                    color: var(--text-muted);
                     font-size: 1.2rem;
                     line-height: 1;
                     top: 50%;
@@ -302,7 +302,7 @@ nav {
         align-items: center;
         gap: 12px;
         padding: 10px 18px;
-        color: #94a3b8;
+        color: var(--text-muted);
         text-decoration: none;
         font-size: 0.9rem;
         font-weight: 500;
