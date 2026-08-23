@@ -17,12 +17,24 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.authService.currentRole$.subscribe(role => {
       if (role) {
-        if (role === 'Bank Admin' || role === 'Branch Manager') {
-          this.userName = 'Sanjay Gupta';
-          this.userInitials = 'SG';
-        } else if (role === 'Super Admin') {
-          this.userName = 'System';
+        if (role === 'Super Admin') {
+          this.userName = 'System Admin';
           this.userInitials = 'SA';
+        } else if (role === 'School Admin') {
+          this.userName = 'Director';
+          this.userInitials = 'DR';
+        } else if (role === 'Principal') {
+          this.userName = 'Dr. Sarah Jenkins';
+          this.userInitials = 'SJ';
+        } else if (role === 'HR') {
+          this.userName = 'HR Manager';
+          this.userInitials = 'HR';
+        } else if (role === 'Teacher') {
+          this.userName = 'Priya Mehta';
+          this.userInitials = 'PM';
+        } else if (role === 'Student') {
+          this.userName = 'Arjun Nair';
+          this.userInitials = 'AN';
         } else {
           this.userName = role;
           this.userInitials = role.charAt(0);

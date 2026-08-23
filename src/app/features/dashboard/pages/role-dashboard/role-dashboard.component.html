@@ -1,9 +1,9 @@
 <div class="dashboard-wrapper">
-  <!-- School Admin Dashboard Layout -->
-  <ng-container *ngIf="currentRole === 'School Admin'">
+  <!-- School Admin / Super Admin Dashboard Layout -->
+  <ng-container *ngIf="currentRole === 'School Admin' || currentRole === 'Super Admin'">
     <div class="dash-header">
       <div class="title-area">
-        <h1>School Admin Dashboard</h1>
+        <h1>{{ currentRole }} Dashboard</h1>
         <p>Enterprise View · Academic Year 2024-25 · All Departments · Data as of {{ dateStr }}</p>
       </div>
       <div class="action-area">
