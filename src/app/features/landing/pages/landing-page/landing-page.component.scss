@@ -87,6 +87,23 @@
       &:hover { color: #fff; }
     }
 
+    .mobile-menu-btn {
+      display: none; // Hidden on desktop
+      background: none;
+      border: none;
+      color: var(--text-main);
+      cursor: pointer;
+      padding: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      transition: background 0.3s;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
     .btn-primary {
       background: linear-gradient(135deg, #1d4ed8, #2563eb);
       color: white;
@@ -117,10 +134,33 @@
   @media (max-width: 768px) {
     margin: 1rem;
     padding: 0.5rem 1rem;
+    
     .nav-links {
-      display: none; // Hide internal links on mobile to save space
+      display: none; // Hidden by default on mobile
+      
+      &.menu-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(20, 25, 35, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 0.5rem;
+        gap: 1.5rem;
+        align-items: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      }
     }
+
     .nav-actions {
+      .mobile-menu-btn {
+        display: flex; // Show hamburger on mobile
+      }
       .btn-primary {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;

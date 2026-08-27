@@ -11,6 +11,11 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
 
   mouseX = 0;
   mouseY = 0;
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
