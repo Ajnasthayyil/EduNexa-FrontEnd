@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
+import { SidebarService } from '../../../core/services/sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   userInitials: string = '';
   showDropdown = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private sidebarService: SidebarService) {}
 
   ngOnInit() {
     this.authService.currentRole$.subscribe(role => {
@@ -45,5 +46,9 @@ export class HeaderComponent implements OnInit {
 
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
+  }
+
+  toggleSidebar() {
+    this.sidebarService.toggleMobileSidebar();
   }
 }

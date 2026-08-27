@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
-import { Router } from '@angular/router';
+import { SidebarService } from '../../../core/services/sidebar.service';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,13 +17,27 @@ export class SidebarComponent implements OnInit {
   activeDept: string = '';
   activeTeamMgmt: boolean = false;
   activeEmployees: boolean = false;
+  isMobileOpen = false;
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private sidebarService: SidebarService
   ) {}
 
   ngOnInit() {
+    this.sidebarService.isMobileOpen$.subscribe(isOpen => {
+      this.isMobileOpen = isOpen;
+    });
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      if (this.isMobileOpen) {
+        this.sidebarService.closeMobileSidebar();
+      }
+    });
+
     this.authService.currentRole$.subscribe((role: string | null) => {
       if (role) {
         this.userRole = role;
@@ -60,5 +76,9 @@ export class SidebarComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  closeSidebar() {
+    this.sidebarService.closeMobileSidebar();
   }
 }

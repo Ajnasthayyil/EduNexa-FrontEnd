@@ -29,13 +29,13 @@
     border: none;
     color: #94a3b8;
     cursor: pointer;
-    display: flex;
+    display: none; // Hidden on desktop
     align-items: center;
     padding: 8px;
     border-radius: 50%;
     transition: background 0.2s;
     
-    &:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    &:hover { background: var(--bg-card-hover); color: var(--text-main); }
   }
 
   .page-title {
@@ -43,6 +43,33 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-main);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 0 16px;
+  }
+  
+  .header-left .menu-btn {
+    display: flex; // Show on mobile
+  }
+
+  .header-center {
+    display: none; // Hide search bar on mobile to save space
+  }
+
+  .header-right .profile-menu {
+    .profile-info {
+      display: none; // Hide text in profile on mobile
+    }
+    .profile-trigger {
+      padding: 0;
+    }
   }
 }
 

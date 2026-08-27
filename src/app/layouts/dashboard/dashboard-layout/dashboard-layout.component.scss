@@ -19,3 +19,9 @@
     padding: 24px;
     overflow-y: auto;
 }
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding: 16px;
+    }
+}
