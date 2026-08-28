@@ -9,7 +9,7 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   selectedRole: string = 'Super Admin';
-  roles: string[] = ['Super Admin', 'Admin', 'Manager', 'Teacher', 'Student', 'Parent', 'Staff'];
+  roles: string[] = ['Super Admin', 'Admin', 'Manager', 'Teacher', 'Student', 'Staff'];
 
   isDropdownOpen = false;
 
