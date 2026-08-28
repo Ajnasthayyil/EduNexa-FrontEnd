@@ -16,11 +16,21 @@
     <form (submit)="onLogin($event)">
       <div class="form-group">
         <label for="role">Select Role</label>
-        <div class="input-wrapper">
+        <div class="custom-select-wrapper input-wrapper" (click)="toggleDropdown()">
           <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          <select id="role" (change)="onRoleChange($event)" class="role-select" required>
-            <option *ngFor="let role of roles" [value]="role" [selected]="role === selectedRole">{{role}}</option>
-          </select>
+          <div class="custom-select-display">
+            {{ selectedRole }}
+            <svg class="dropdown-chevron" [class.rotated]="isDropdownOpen" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </div>
+          <div class="custom-options" *ngIf="isDropdownOpen">
+            <div 
+              class="custom-option" 
+              *ngFor="let role of roles" 
+              [class.selected]="role === selectedRole"
+              (click)="selectRole(role); $event.stopPropagation()">
+              {{ role }}
+            </div>
+          </div>
         </div>
       </div>
 
