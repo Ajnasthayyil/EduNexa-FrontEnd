@@ -8,10 +8,10 @@
     </div>
     
     <nav class="nav-links" [class.menu-open]="isMenuOpen">
-      <a href="#" class="nav-link active">Home</a>
-      <a href="#" class="nav-link">Features</a>
-      <a href="#" class="nav-link">Modules</a>
-      <a href="#" class="nav-link">Contact Us</a>
+      <a (click)="scrollTo('home')" class="nav-link active">Home</a>
+      <a (click)="scrollTo('features')" class="nav-link">Features</a>
+      <a (click)="scrollTo('modules')" class="nav-link">Modules</a>
+      <a (click)="scrollTo('contact')" class="nav-link">Contact Us</a>
     </nav>
     
     <div class="nav-actions">
@@ -29,7 +29,7 @@
 
     <main>
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section id="home" class="hero-section">
       <!-- 3D Floating Orbs (CSS) -->
       <div class="floating-orb orb-1"></div>
       <div class="floating-orb orb-2"></div>
@@ -69,7 +69,7 @@
     </section>
 
     <!-- Solid Foundation Section -->
-    <section #scrollElement class="solid-foundation animate-on-scroll">
+    <section id="features" #scrollElement class="solid-foundation animate-on-scroll">
       <h2>Built on a solid foundation</h2>
       
       <div class="foundation-cards">
@@ -168,7 +168,7 @@
     </section>
 
     <!-- Core Modules Section -->
-    <section #scrollElement class="modules-section animate-on-scroll">
+    <section id="modules" #scrollElement class="modules-section animate-on-scroll">
       <div class="section-header">
         <h2>Where Learning Meets Possibility</h2>
         <p>A suite of intelligent modules built for modern institutions</p>
@@ -295,7 +295,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="landing-footer">
+    <footer id="contact" class="landing-footer">
       <div class="footer-content">
         <div class="footer-brand">
           <div class="f-logo">

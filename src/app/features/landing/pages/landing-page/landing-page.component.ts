@@ -17,6 +17,17 @@ export class LandingPageComponent implements AfterViewInit, OnDestroy {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  scrollTo(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Small offset for fixed navbar
+      const yOffset = -80; 
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({top: y, behavior: 'smooth'});
+    }
+    this.isMenuOpen = false; // Close mobile menu if open
+  }
+
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     this.mouseX = event.clientX;
