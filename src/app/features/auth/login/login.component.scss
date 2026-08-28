@@ -119,6 +119,12 @@
   margin-bottom: 1rem;
   transform: translateZ(20px);
   transform-style: preserve-3d;
+  position: relative; // Required for z-index layering
+
+  // Fix stacking context for 3D transforms so dropdowns appear above subsequent inputs
+  &:nth-child(1) { z-index: 10; }
+  &:nth-child(2) { z-index: 9; }
+  &:nth-child(3) { z-index: 8; }
   
   label {
     display: block;
@@ -211,7 +217,7 @@
         left: 0;
         right: 0;
         margin-top: 0.5rem;
-        background: linear-gradient(145deg, var(--bg-card), var(--bg-dark));
+        background: rgba(15, 23, 42, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid var(--border-color);
