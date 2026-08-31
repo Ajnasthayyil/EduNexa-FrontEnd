@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../core/services/auth.service';
 import { SidebarService } from '../../../core/services/sidebar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
   userInitials: string = '';
   showDropdown = false;
 
-  constructor(private authService: AuthService, private sidebarService: SidebarService) {}
+  constructor(private authService: AuthService, private sidebarService: SidebarService, private router: Router) {}
 
   ngOnInit() {
     this.authService.currentRole$.subscribe(role => {
@@ -50,5 +51,10 @@ export class HeaderComponent implements OnInit {
 
   toggleSidebar() {
     this.sidebarService.toggleMobileSidebar();
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
