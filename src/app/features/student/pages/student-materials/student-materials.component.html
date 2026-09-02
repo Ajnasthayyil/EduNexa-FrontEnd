@@ -1,1 +1,56 @@
-<p>student-materials works!</p>
+<div class="materials-container">
+  <div class="materials-header">
+    <div class="header-titles">
+      <h2>Study Materials</h2>
+      <p class="subtitle">Browse and download your course resources</p>
+    </div>
+    
+    <div class="search-bar">
+      <input type="text" placeholder="Search materials..." (keyup)="onSearch($event)">
+    </div>
+  </div>
+
+  <div class="materials-layout">
+    <aside class="materials-sidebar">
+      <h3>Categories</h3>
+      <ul class="category-list">
+        <li *ngFor="let cat of categories" 
+            [class.active]="cat === activeCategory"
+            (click)="filterByCategory(cat)">
+          {{ cat }}
+        </li>
+      </ul>
+    </aside>
+
+    <main class="materials-content">
+      <div class="materials-grid" *ngIf="filteredMaterials.length > 0; else noResults">
+        <div class="material-card" *ngFor="let item of filteredMaterials">
+          <div class="card-icon" [ngClass]="item.type">
+            <span class="emoji">{{ getIconForType(item.type) }}</span>
+          </div>
+          <div class="card-details">
+            <h4 class="title">{{ item.title }}</h4>
+            <div class="meta">
+              <span class="subject">{{ item.subject }}</span>
+              <span class="dot">•</span>
+              <span class="size">{{ item.size }}</span>
+            </div>
+            <div class="meta-bottom">
+              <span class="author">By {{ item.author }}</span>
+              <span class="date">{{ item.uploadDate }}</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn-action">{{ item.type === 'link' ? 'Open Link' : 'Download' }}</button>
+          </div>
+        </div>
+      </div>
+      
+      <ng-template #noResults>
+        <div class="empty-state">
+          <p>No materials found matching your search.</p>
+        </div>
+      </ng-template>
+    </main>
+  </div>
+</div>
