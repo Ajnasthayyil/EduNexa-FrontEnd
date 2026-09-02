@@ -1,6 +1,6 @@
 .timetable-container {
   padding: 24px;
-  background-color: #f8fafc;
+  background-color: transparent;
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -11,12 +11,12 @@
   h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--text-main);
     margin: 0 0 8px 0;
   }
   
   .subtitle {
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 16px;
     margin: 0;
   }
@@ -37,25 +37,25 @@
 }
 
 .day-column {
-  background: white;
+  background: var(--bg-card);
   border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .day-header {
-  background: #f1f5f9;
+  background: var(--bg-card-hover);
   padding: 16px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color);
   text-align: center;
   
   h3 {
     margin: 0;
     font-size: 18px;
     font-weight: 600;
-    color: #334155;
+    color: var(--text-main);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
@@ -78,62 +78,103 @@
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-lg);
   }
   
   &.theme-blue {
     background-color: #eff6ff;
     border-color: #3b82f6;
     .session-subject { color: #1e3a8a; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(59, 130, 246, 0.1);
+      .session-subject { color: #60a5fa; }
+    }
   }
   &.theme-green {
     background-color: #f0fdf4;
     border-color: #22c55e;
     .session-subject { color: #14532d; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(34, 197, 94, 0.1);
+      .session-subject { color: #4ade80; }
+    }
   }
   &.theme-purple {
     background-color: #faf5ff;
     border-color: #a855f7;
     .session-subject { color: #581c87; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(168, 85, 247, 0.1);
+      .session-subject { color: #c084fc; }
+    }
   }
   &.theme-yellow {
     background-color: #fefce8;
     border-color: #eab308;
     .session-subject { color: #713f12; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(234, 179, 8, 0.1);
+      .session-subject { color: #facc15; }
+    }
   }
   &.theme-red {
     background-color: #fef2f2;
     border-color: #ef4444;
     .session-subject { color: #7f1d1d; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(239, 68, 68, 0.1);
+      .session-subject { color: #f87171; }
+    }
   }
   &.theme-orange {
     background-color: #fff7ed;
     border-color: #f97316;
     .session-subject { color: #7c2d12; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(249, 115, 22, 0.1);
+      .session-subject { color: #fb923c; }
+    }
   }
   &.theme-teal {
     background-color: #f0fdfa;
     border-color: #14b8a6;
     .session-subject { color: #134e4a; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(20, 184, 166, 0.1);
+      .session-subject { color: #2dd4bf; }
+    }
   }
   &.theme-pink {
     background-color: #fdf2f8;
     border-color: #ec4899;
     .session-subject { color: #831843; }
+    
+    :host-context([data-theme="dark"]) & {
+      background-color: rgba(236, 72, 153, 0.1);
+      .session-subject { color: #f472b6; }
+    }
   }
 }
 
 .session-time {
   font-size: 13px;
   font-weight: 600;
-  color: #475569;
+  color: var(--text-muted);
   margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 4px;
   
   .separator {
-    color: #94a3b8;
+    color: var(--text-muted);
+    opacity: 0.7;
   }
 }
 
@@ -141,13 +182,14 @@
   margin: 0 0 12px 0;
   font-size: 18px;
   font-weight: 700;
+  color: var(--text-main);
 }
 
 .session-details {
   display: flex;
   justify-content: space-between;
   font-size: 14px;
-  color: #64748b;
+  color: var(--text-muted);
   font-weight: 500;
   
   span {
@@ -163,9 +205,9 @@
   justify-content: center;
   height: 100%;
   min-height: 150px;
-  border: 2px dashed #e2e8f0;
+  border: 2px dashed var(--border-color);
   border-radius: 12px;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-weight: 500;
   
   p { margin: 0; }
