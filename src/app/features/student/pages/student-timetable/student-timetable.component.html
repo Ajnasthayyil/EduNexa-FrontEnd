@@ -1,1 +1,35 @@
-<p>student-timetable works!</p>
+<div class="timetable-container">
+  <div class="timetable-header">
+    <h2>Weekly Schedule</h2>
+    <p class="subtitle">Current Semester Timetable</p>
+  </div>
+
+  <div class="timetable-grid">
+    <div class="day-column" *ngFor="let day of daysOfWeek">
+      <div class="day-header">
+        <h3>{{ day }}</h3>
+      </div>
+      <div class="sessions-list">
+        <ng-container *ngIf="getSessionsForDay(day).length > 0; else noSessions">
+          <div class="session-card" *ngFor="let session of getSessionsForDay(day)" [ngClass]="session.theme">
+            <div class="session-time">
+              <span>{{ session.startTime }}</span>
+              <span class="separator">-</span>
+              <span>{{ session.endTime }}</span>
+            </div>
+            <h4 class="session-subject">{{ session.subject }}</h4>
+            <div class="session-details">
+              <span class="session-teacher">{{ session.teacher }}</span>
+              <span class="session-room">{{ session.room }}</span>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #noSessions>
+          <div class="empty-state">
+            <p>Free Day</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
