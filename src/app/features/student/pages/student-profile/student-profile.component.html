@@ -1,1 +1,114 @@
-<p>student-profile works!</p>
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="header-titles">
+      <h2>Student Profile</h2>
+      <p class="subtitle">Manage your personal and academic information</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn-secondary" *ngIf="!isEditing" (click)="toggleEditMode()">Edit Profile</button>
+      <button class="btn-primary" *ngIf="isEditing" (click)="saveChanges()">Save Changes</button>
+      <button class="btn-secondary" *ngIf="isEditing" (click)="toggleEditMode()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="profile-layout">
+    <!-- Left Column: Avatar & Basic Info -->
+    <div class="profile-sidebar">
+      <div class="card avatar-card">
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            {{ student.firstName.charAt(0) }}{{ student.lastName.charAt(0) }}
+          </div>
+          <button class="btn-change-photo" *ngIf="isEditing" title="Change Photo">📷</button>
+        </div>
+        <h3 class="student-name">{{ student.firstName }} {{ student.lastName }}</h3>
+        <p class="student-id">{{ student.studentId }}</p>
+        <span class="badge course-badge">{{ student.course }}</span>
+      </div>
+    </div>
+
+    <!-- Right Column: Detailed Info -->
+    <div class="profile-content">
+      
+      <!-- Personal Details -->
+      <div class="card info-card">
+        <div class="card-header">
+          <h3>Personal Details</h3>
+        </div>
+        <div class="card-body grid-2-col">
+          <div class="info-group">
+            <label>First Name</label>
+            <input type="text" [(ngModel)]="student.firstName" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group">
+            <label>Last Name</label>
+            <input type="text" [(ngModel)]="student.lastName" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group">
+            <label>Email Address</label>
+            <input type="email" [(ngModel)]="student.email" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group">
+            <label>Phone Number</label>
+            <input type="text" [(ngModel)]="student.phone" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group">
+            <label>Date of Birth</label>
+            <input type="text" [(ngModel)]="student.dob" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group full-width">
+            <label>Residential Address</label>
+            <textarea [(ngModel)]="student.address" [disabled]="!isEditing" class="form-control" rows="2"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic Details (Read Only) -->
+      <div class="card info-card">
+        <div class="card-header">
+          <h3>Academic Information</h3>
+        </div>
+        <div class="card-body grid-2-col">
+          <div class="info-group">
+            <label>Enrolled Course</label>
+            <p class="readonly-text">{{ student.course }}</p>
+          </div>
+          <div class="info-group">
+            <label>Current Semester</label>
+            <p class="readonly-text">{{ student.semester }}</p>
+          </div>
+          <div class="info-group">
+            <label>Batch</label>
+            <p class="readonly-text">{{ student.batch }}</p>
+          </div>
+          <div class="info-group">
+            <label>Date of Admission</label>
+            <p class="readonly-text">{{ student.admissionDate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guardian Details -->
+      <div class="card info-card">
+        <div class="card-header">
+          <h3>Guardian Details</h3>
+        </div>
+        <div class="card-body grid-2-col">
+          <div class="info-group">
+            <label>Guardian Name</label>
+            <input type="text" [(ngModel)]="student.guardianName" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group">
+            <label>Relationship</label>
+            <input type="text" [(ngModel)]="student.guardianRelation" [disabled]="!isEditing" class="form-control">
+          </div>
+          <div class="info-group">
+            <label>Emergency Contact</label>
+            <input type="text" [(ngModel)]="student.guardianContact" [disabled]="!isEditing" class="form-control">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
