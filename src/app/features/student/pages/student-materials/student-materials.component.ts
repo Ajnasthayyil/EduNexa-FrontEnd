@@ -57,11 +57,11 @@ export class StudentMaterialsComponent implements OnInit {
 
   getIconForType(type: string): string {
     switch (type) {
-      case 'pdf': return '📄'; // Fallback emoji if icon class fails
-      case 'doc': return '📝';
-      case 'video': return '▶️';
-      case 'link': return '🔗';
-      default: return '📁';
+      case 'pdf': return 'pi pi-file-pdf';
+      case 'doc': return 'pi pi-file-word';
+      case 'video': return 'pi pi-video';
+      case 'link': return 'pi pi-link';
+      default: return 'pi pi-file';
     }
   }
 }

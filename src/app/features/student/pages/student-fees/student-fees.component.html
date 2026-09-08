@@ -11,7 +11,7 @@
 
   <div class="summary-cards">
     <div class="card summary-card total">
-      <div class="card-icon">💰</div>
+      <div class="card-icon"><i class="pi pi-wallet"></i></div>
       <div class="card-info">
         <span class="label">Total Fees</span>
         <h3 class="value">{{ totalFee | currency:'USD':'symbol':'1.0-0' }}</h3>
@@ -19,7 +19,7 @@
     </div>
     
     <div class="card summary-card paid">
-      <div class="card-icon">✅</div>
+      <div class="card-icon"><i class="pi pi-check-circle"></i></div>
       <div class="card-info">
         <span class="label">Amount Paid</span>
         <h3 class="value">{{ paidAmount | currency:'USD':'symbol':'1.0-0' }}</h3>
@@ -27,7 +27,7 @@
     </div>
     
     <div class="card summary-card balance">
-      <div class="card-icon">⏳</div>
+      <div class="card-icon"><i class="pi pi-clock"></i></div>
       <div class="card-info">
         <span class="label">Balance Due</span>
         <h3 class="value">{{ balanceAmount | currency:'USD':'symbol':'1.0-0' }}</h3>
@@ -66,7 +66,7 @@
               </td>
               <td class="actions">
                 <button *ngIf="txn.status === 'Paid'" class="btn-icon" title="Download Receipt">
-                  📄
+                  <i class="pi pi-download"></i>
                 </button>
                 <button *ngIf="txn.status !== 'Paid'" class="btn-pay" (click)="payNow(txn)">
                   Pay Now

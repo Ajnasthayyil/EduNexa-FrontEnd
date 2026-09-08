@@ -26,7 +26,7 @@
       <div class="materials-grid" *ngIf="filteredMaterials.length > 0; else noResults">
         <div class="material-card" *ngFor="let item of filteredMaterials">
           <div class="card-icon" [ngClass]="item.type">
-            <span class="emoji">{{ getIconForType(item.type) }}</span>
+            <i [class]="getIconForType(item.type)"></i>
           </div>
           <div class="card-details">
             <h4 class="title">{{ item.title }}</h4>
